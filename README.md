@@ -1,19 +1,53 @@
-# Acelerador PS de Clínica Médica (HMS) #
+# Acelerador do Pronto Socorro de Clínica Médica #
 
-Página principal: **gerador.html**
+## Objetivo
 
-## Funcionalidades e Conformidade ONA 3
-Este sistema foi reescrito para respeitar as exigências técnicas da certificação ONA 3 para o preenchimento de prontuários:
-- **Separação rigorosa de Queixa (Sintomas)** e **Hipótese Diagnóstica (Patologias)**;
-- **Sem caracteres de internet:** Eliminação absoluta de travessões (`-`), emojis e outros caracteres informais. Os tópicos e listas são delineados por quebra de linhas para leitura clínica fluída e fácil colagem no prontuário eletrônico;
-- **Auto-Save anti-falhas:** Todo o preenchimento é salvo automaticamente no cache. Se o sistema hospitalar cair e a página atualizar, nenhum dado é perdido.
-- **Digitação por Voz:** Acelera o fluxo do plantão permitindo falar ao invés de digitar.
-- **Parser de Exames Inteligente:** Resume laudos brutos formatando-os para leitura clínica concisa, usando marcadores como o pipe (`|`) ao invés de hifens.
+Reestruturar a interface do HMS para tornar o fluxo de atendimento mais rápido, intuitivo e com menor número de cliques durante o plantão.
 
-## Hospedagem e Acesso
-Link: https://drajoyceradis.github.io/HMS-Dra-Joyce-Radis/gerador.html
+## Problema Atual
 
-Arquivos de estrutura:
-- `gerador.html`: Interface visual ONA 3 e inteligência integradas (uso principal).
-- `app.js`: Backend unificado (caso seja utilizado em outras páginas customizadas).
-- `.nojekyll`, `index.html` e `home.html`: Suporte nativo para GitHub Pages.
+- Interface simples e pouco otimizada.
+- Muitas funcionalidades concentradas em uma única tela.
+- Navegação lenta durante o atendimento.
+- Layout pouco moderno.
+- CSS necessita padronização.
+- Ausência de uma Home organizada.
+
+## O que deve ser implementado
+
+### Home
+- Criar uma página inicial.
+- Exibir os principais módulos em formato de cards.
+- Acesso rápido às ferramentas mais utilizadas.
+
+### Navegação
+- Sidebar fixa.
+- Menu organizado por categorias.
+- Pesquisa rápida de ferramentas.
+
+### Design
+- Padronizar CSS.
+- Melhorar tipografia.
+- Melhorar espaçamentos.
+- Melhor contraste.
+- Melhor responsividade.
+- Interface limpa e moderna.
+
+### Experiência do usuário
+- Reduzir quantidade de cliques.
+- Priorizar velocidade durante o plantão.
+- Layout pensado para médicos em ambiente de emergência.
+
+### Organização
+- Separar páginas por módulos.
+- Componentizar elementos reutilizáveis.
+- Facilitar futuras expansões do sistema.
+
+## Critérios de aceite
+
+- Interface mais intuitiva.
+- Home funcional.
+- Navegação simplificada.
+- CSS padronizado.
+- Responsividade preservada.
+- Nenhuma funcionalidade existente deve ser perdida.
