@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HMS - Estação Clínica</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-row">
+      <div>
+        <h1>HMS | Estação Clínica</h1>
+        <p id="currentModeLabel">Entrada PS</p>
+      </div>
+
+      <div class="top-actions">
+        <a class="btn ghost" href="index.html">Home</a>
+        <button class="btn ghost" id="btnAuditTop">Gerar justificativa</button>
+        <button class="btn primary" id="copyTop">Copiar prontuário</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap shell">
+    <aside class="side">
+      <div class="panel dark">
+        <div class="panel-title">Queixa principal</div>
+        <div class="qplist" id="qpList"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Ações</div>
+        <div class="navlist">
+          <button class="nav" data-mode="entrada">Entrada</button>
+          <button class="nav" data-mode="reavaliacao">Reavaliação</button>
+          <button class="nav" data-mode="alta">Alta</button>
+          <button class="nav" data-mode="internacao">Internação</button>
+          <button class="nav" data-mode="parecer">Parecer</button>
+          <button class="nav" data-mode="exame">Exame alto custo</button>
+          <button class="nav" data-mode="passagem">Passagem</button>
+        </div>
+      </div>
+    </aside>
+
+    <section class="center">
+      <div class="panel">
+        <div class="panel-title">Coleta clínica</div>
+        <div class="body">
+          <div class="grid3">
+            <div>
+              <label>Paciente</label>
+              <input id="paciente">
+            </div>
+            <div>
+              <label>Destino provável</label>
+              <select id="destino">
+                <option>EM OBSERVAÇÃO</option>
+                <option>ALTA APÓS REAVALIAÇÃO</option>
+                <option>INTERNAÇÃO EM ENFERMARIA</option>
+                <option>UTI</option>
+                <option>TRANSFERÊNCIA</option>
+                <option>PARECER ESPECIALISTA</option>
+              </select>
+            </div>
+            <div>
+              <label>Tempo de sintomas</label>
+              <input id="tempo">
+            </div>
+          </div>
+
+          <label>HDA</label>
+          <textarea id="hda" class="big"></textarea>
+
+          <div id="scenarioFields" class="grid2"></div>
+
+          <div class="grid4">
+            <div><label>PA</label><input id="pa"></div>
+            <div><label>FC</label><input id="fc"></div>
+            <div><label>FR</label><input id="fr"></div>
+            <div><label>SATO2</label><input id="sat"></div>
+          </div>
+
+          <div class="grid4">
+            <div><label>TAX</label><input id="tax"></div>
+            <div><label>HGT</label><input id="hgt"></div>
+            <div><label>Dor</label><input id="dor"></div>
+            <div><label>Score</label><input id="score"></div>
+          </div>
+
+          <div class="grid2">
+            <div>
+              <label>Exame físico</label>
+              <textarea id="exame" class="big"></textarea>
+            </div>
+            <div>
+              <label>Exames complementares</label>
+              <textarea id="exames" class="big"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Raciocínio e auditoria</div>
+        <div class="body">
+          <div class="grid2">
+            <div>
+              <label>Hipóteses diagnósticas</label>
+              <textarea id="hd" class="big"></textarea>
+            </div>
+            <div>
+              <label>Conduta</label>
+              <textarea id="conduta" class="big"></textarea>
+            </div>
+          </div>
+
+          <label>Red flags</label>
+          <div id="redFlags" class="checks"></div>
+
+          <label>Justificativa</label>
+          <textarea id="just" class="big"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <aside class="preview">
+      <div class="panel">
+        <div class="panel-title">Texto final</div>
+        <div class="body preview-body">
+          <textarea id="out" class="output"></textarea>
+          <div class="bar">
+            <button class="btn primary" id="copy">Copiar</button>
+            <button class="btn" id="regen">Regerar</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="js/estacao.js"></script>
+</body>
+</html>
